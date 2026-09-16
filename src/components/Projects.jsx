@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub, FiFolder } from "react-icons/fi";
 import { projects } from "../data/content";
 import Reveal from "./Reveal";
 
@@ -53,8 +53,11 @@ function TiltCard({ project, index }) {
         {project.image ? (
           <img src={project.image} alt={project.title} />
         ) : (
-          "Bild folgt"
+          <FiFolder className="project-image-icon" />
         )}
+        <span className="project-index">
+          {String(index + 1).padStart(2, "0")}
+        </span>
       </div>
       <div className="project-body">
         <h3 className="project-title">{project.title}</h3>
