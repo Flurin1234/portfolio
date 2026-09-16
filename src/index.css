@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #fffdfb;
+  --bg-soft: #f5faf6;
+  --surface: #ffffff;
+  --border: #e6f0e9;
+  --text: #263230;
+  --text-muted: #72807a;
+
+  --pastel: #b3e6c4;
+  --pastel-soft: #eaf9ef;
+  --pastel-mid: #cdf0da;
+
+  --accent: #5cb586;
+  --accent-gradient: linear-gradient(135deg, var(--pastel-mid), var(--pastel));
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --max-width: 1120px;
+  --nav-height: 76px;
+
+  --shadow-soft: 0 20px 45px -25px rgba(92, 181, 134, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", "Inter", sans-serif;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  overflow-x: hidden;
+}
