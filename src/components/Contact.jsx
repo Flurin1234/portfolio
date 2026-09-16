@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { FiMail } from "react-icons/fi";
 import { profile } from "../data/content";
+import { Button } from "@/components/ui/button";
 import Reveal from "./Reveal";
 
 export default function Contact() {
@@ -13,14 +15,16 @@ export default function Contact() {
             Du hast ein Projekt, eine Frage oder willst einfach Hallo sagen?
             Schreib mir gerne eine Nachricht.
           </p>
-          <motion.a
-            href={`mailto:${profile.email}`}
-            className="btn btn-primary contact-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            {profile.email}
-          </motion.a>
+          <Button asChild size="lg" className="rounded-full px-7">
+            <motion.a
+              href={`mailto:${profile.email}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+            >
+              <FiMail />
+              {profile.email}
+            </motion.a>
+          </Button>
         </Reveal>
       </div>
     </section>

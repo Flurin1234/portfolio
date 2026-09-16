@@ -4,6 +4,17 @@ import { FiExternalLink, FiGithub, FiFolder } from "react-icons/fi";
 import { projects } from "../data/content";
 import Reveal from "./Reveal";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+
+const MotionCard = motion.create(Card);
 
 function TiltCard({ project, index }) {
   const ref = useRef(null);
@@ -28,7 +39,7 @@ function TiltCard({ project, index }) {
   };
 
   return (
-    <motion.article
+    <MotionCard
       ref={ref}
       className="project-card"
       style={{ rotateX, rotateY, transformPerspective: 800 }}
@@ -60,9 +71,15 @@ function TiltCard({ project, index }) {
           {String(index + 1).padStart(2, "0")}
         </span>
       </div>
-      <div className="project-body">
-        <h3 className="project-title">{project.title}</h3>
-        <p className="project-desc">{project.description}</p>
+
+      <CardHeader>
+        <CardTitle className="project-title">{project.title}</CardTitle>
+        <CardDescription className="project-desc">
+          {project.description}
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent>
         <div className="project-tags">
           {project.tags.map((tag) => (
             <Badge key={tag} variant="secondary">
@@ -70,20 +87,25 @@ function TiltCard({ project, index }) {
             </Badge>
           ))}
         </div>
-        <div className="project-links">
-          {project.liveUrl && (
+      </CardContent>
+
+      <CardFooter className="project-links">
+        {project.liveUrl && (
+          <Button asChild variant="ghost" size="sm">
             <a href={project.liveUrl} target="_blank" rel="noopener">
               <FiExternalLink /> Live Demo
             </a>
-          )}
-          {project.githubUrl && (
+          </Button>
+        )}
+        {project.githubUrl && (
+          <Button asChild variant="ghost" size="sm">
             <a href={project.githubUrl} target="_blank" rel="noopener">
               <FiGithub /> GitHub
             </a>
-          )}
-        </div>
-      </div>
-    </motion.article>
+          </Button>
+        )}
+      </CardFooter>
+    </MotionCard>
   );
 }
 

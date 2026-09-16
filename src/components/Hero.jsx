@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { profile } from "../data/content";
+import { Button } from "@/components/ui/button";
 
 const container = {
   hidden: {},
@@ -78,24 +79,26 @@ export default function Hero() {
         </motion.p>
 
         <motion.div variants={item} className="hero-actions">
-          <motion.a
-            href="#projects"
-            className="btn btn-primary"
-            whileHover={{ scale: 1.06, y: -2 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ type: "spring", stiffness: 400, damping: 15 }}
-          >
-            Projekte ansehen
-          </motion.a>
-          <motion.a
-            href="#contact"
-            className="btn btn-ghost"
-            whileHover={{ scale: 1.06, y: -2 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ type: "spring", stiffness: 400, damping: 15 }}
-          >
-            Kontakt aufnehmen
-          </motion.a>
+          <Button asChild size="lg" className="rounded-full px-7">
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.06, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            >
+              Projekte ansehen
+            </motion.a>
+          </Button>
+          <Button asChild variant="outline" size="lg" className="rounded-full px-7">
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.06, y: -2 }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            >
+              Kontakt aufnehmen
+            </motion.a>
+          </Button>
         </motion.div>
 
         <motion.div variants={item} className="hero-social">

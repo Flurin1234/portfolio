@@ -210,37 +210,6 @@
   margin-bottom: 32px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 13px 28px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  border: 2px solid transparent;
-}
-
-.btn-primary {
-  background: var(--accent-gradient);
-  color: #1f4a33;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-soft);
-}
-
-.btn-ghost {
-  border-color: var(--border);
-  background: var(--surface);
-  color: var(--text);
-}
-
-.btn-ghost:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
 .hero-social {
   display: flex;
   gap: 20px;
@@ -404,6 +373,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding: 0 0 1.5rem;
   box-shadow: 0 12px 30px -22px rgba(92, 181, 134, 0.35);
   transform-style: preserve-3d;
 }
@@ -450,14 +420,6 @@
   object-fit: cover;
 }
 
-.project-body {
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  flex: 1;
-}
-
 .project-title {
   font-size: 1.1rem;
   font-weight: 700;
@@ -477,36 +439,10 @@
   gap: 8px;
 }
 
-.project-tags span {
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--bg-soft);
-  color: var(--accent);
-}
-
 .project-links {
   display: flex;
-  gap: 16px;
-  margin-top: 4px;
-}
-
-.project-links a {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border-bottom: 2px solid var(--border);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.project-links a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* ===== Contact ===== */
@@ -522,12 +458,6 @@
   color: var(--text-muted);
   max-width: 480px;
   margin: 0 auto 32px;
-}
-
-.contact-btn {
-  font-size: 1.05rem;
-  cursor: pointer;
-  border: none;
 }
 
 /* ===== Footer ===== */
