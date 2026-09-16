@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiExternalLink, FiGithub, FiFolder } from "react-icons/fi";
 import { projects } from "../data/content";
 import Reveal from "./Reveal";
+import { Badge } from "@/components/ui/badge";
 
 function TiltCard({ project, index }) {
   const ref = useRef(null);
@@ -64,7 +65,9 @@ function TiltCard({ project, index }) {
         <p className="project-desc">{project.description}</p>
         <div className="project-tags">
           {project.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
+            <Badge key={tag} variant="secondary">
+              {tag}
+            </Badge>
           ))}
         </div>
         <div className="project-links">
