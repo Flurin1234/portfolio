@@ -29,10 +29,12 @@ export default function About() {
                 <strong>Fokus</strong>
                 <span>{profile.focus}</span>
               </div>
-              <div>
-                <strong>Verfügbar für</strong>
-                <span>{profile.availability}</span>
-              </div>
+              {profile.availability && (
+                <div>
+                  <strong>Verfügbar für</strong>
+                  <span>{profile.availability}</span>
+                </div>
+              )}
             </div>
           </Reveal>
         </div>

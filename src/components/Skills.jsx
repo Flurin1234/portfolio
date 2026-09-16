@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { skills } from "../data/content";
+import { skillCategories } from "../data/content";
 import { getSkillIcon } from "../data/skillIcons";
 import Reveal from "./Reveal";
 
@@ -12,24 +12,45 @@ export default function Skills() {
           <h2 className="section-title">Womit ich arbeite</h2>
         </Reveal>
 
-        <div className="skills-grid">
-          {skills.map((skill, i) => {
-            const Icon = getSkillIcon(skill);
-            return (
-              <motion.div
-                key={skill}
-                className="skill-chip"
-                initial={{ opacity: 0, scale: 0.85 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
-                whileHover={{ y: -4, scale: 1.03 }}
-              >
-                <Icon className="skill-chip-icon" />
-                <span>{skill}</span>
-              </motion.div>
-            );
-          })}
+        <div className="skills-categories">
+          {skillCategories.map((category, catIndex) => (
+            <Reveal key={category.title} delay={catIndex * 0.1}>
+              <h3 className="skills-category-title">{category.title}</h3>
+              <div className="skills-grid">
+                {category.title === "Soft Skills"
+                  ? category.skills.map((skill, i) => (
+                      <motion.div
+                        key={skill}
+                        className="skill-chip skill-chip-soft"
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true, amount: 0.4 }}
+                        transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
+                        whileHover={{ y: -4, scale: 1.03 }}
+                      >
+                        <span>{skill}</span>
+                      </motion.div>
+                    ))
+                  : category.skills.map((skill, i) => {
+                      const Icon = getSkillIcon(skill);
+                      return (
+                        <motion.div
+                          key={skill}
+                          className="skill-chip"
+                          initial={{ opacity: 0, scale: 0.85 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true, amount: 0.4 }}
+                          transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
+                          whileHover={{ y: -4, scale: 1.03 }}
+                        >
+                          <Icon className="skill-chip-icon" />
+                          <span>{skill}</span>
+                        </motion.div>
+                      );
+                    })}
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

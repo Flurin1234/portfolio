@@ -13,22 +13,41 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/flurin-manella-01b455379/",
   location: "Rupperswil, Schweiz",
   focus: "Web Development, Frontend & Design",
-  availability: "Praktikum / Festanstellung",
+  availability: "",
   bio: [
     "Hier kommt dein ausführlicher Steckbrief hin: dein Werdegang, was dich zur Softwareentwicklung gebracht hat, und woran du aktuell arbeitest oder lernst.",
     "Zweiter Absatz: was dir wichtig ist bei deiner Arbeit, welche Art von Projekten dich reizt, und was dich von anderen unterscheidet.",
   ],
 };
 
-export const skills = [
-  "HTML & CSS",
-  "JavaScript",
-  "React",
-  "Python",
-  "Git & GitHub",
-  "Node.js",
-  "SQL",
-  "Figma",
+export const skillCategories = [
+  {
+    title: "Design",
+    skills: ["Figma", "Miro", "Canva"],
+  },
+  {
+    title: "Programmiersprachen",
+    skills: ["JavaScript", "TypeScript", "Python", "Java"],
+  },
+  {
+    title: "Frameworks & Tools",
+    skills: [
+      "HTML & CSS",
+      "Tailwind CSS",
+      "React",
+      "Node.js",
+      "Next.js",
+      "NestJS",
+      "Git",
+      "GitHub",
+      "SQL",
+      "Docker",
+    ],
+  },
+  {
+    title: "Soft Skills",
+    skills: ["Teamfähigkeit", "Kommunikation", "Kreativität"],
+  },
 ];
 
 // image: Pfad zu einer Datei in src/assets/projects/ (leer lassen = Platzhalter)

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
 
 :root {
   --bg: #fffdfb;
@@ -24,6 +25,37 @@
   --shadow-soft: 0 20px 45px -25px rgba(92, 181, 134, 0.3);
 }
 
+/* shadcn/ui theme tokens — mapped onto our existing pastel-green palette */
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--text);
+
+  --color-primary: var(--accent);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: var(--pastel-soft);
+  --color-secondary-foreground: var(--text);
+
+  --color-muted: var(--bg-soft);
+  --color-muted-foreground: var(--text-muted);
+
+  --color-accent: var(--pastel-soft);
+  --color-accent-foreground: var(--text);
+
+  --color-destructive: #e5555a;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--accent);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,7 +66,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+  background-size: 28px 28px;
   color: var(--text);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.65;

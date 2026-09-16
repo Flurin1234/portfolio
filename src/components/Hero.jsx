@@ -64,11 +64,6 @@ export default function Hero() {
         initial="hidden"
         animate="show"
       >
-        <motion.div variants={item} className="availability-badge">
-          <span className="availability-dot" />
-          Verfügbar für {profile.availability}
-        </motion.div>
-
         <motion.p variants={item} className="hero-eyebrow">
           Hi, ich bin
         </motion.p>

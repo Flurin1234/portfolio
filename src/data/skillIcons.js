@@ -1,6 +1,6 @@
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiTypescript,
   SiReact,
@@ -8,33 +8,34 @@ import {
   SiGit,
   SiGithub,
   SiNodedotjs,
+  SiNestjs,
   SiMysql,
   SiFigma,
-  SiVuedotjs,
+  SiMiro,
   SiTailwindcss,
   SiNextdotjs,
-  SiPhp,
   SiDocker,
-  SiCplusplus,
 } from "react-icons/si";
-import { FiCode } from "react-icons/fi";
+import { FaJava } from "react-icons/fa";
+import { FiCode, FiImage } from "react-icons/fi";
 
 const matchers = [
   [/html/i, SiHtml5],
-  [/css/i, SiCss3],
+  [/css/i, SiCss],
   [/typescript/i, SiTypescript],
-  [/javascript/i, SiJavascript],
+  [/javascript|^js$/i, SiJavascript],
   [/next/i, SiNextdotjs],
+  [/nest/i, SiNestjs],
   [/react/i, SiReact],
-  [/vue/i, SiVuedotjs],
   [/tailwind/i, SiTailwindcss],
   [/python/i, SiPython],
-  [/php/i, SiPhp],
-  [/c\+\+/i, SiCplusplus],
+  [/java/i, FaJava],
   [/docker/i, SiDocker],
   [/node/i, SiNodedotjs],
   [/sql/i, SiMysql],
   [/figma/i, SiFigma],
+  [/miro/i, SiMiro],
+  [/canva/i, FiImage],
   [/github/i, SiGithub],
   [/git/i, SiGit],
 ];
